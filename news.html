@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=960">
+<style>.anim{visibility:hidden}</style>
+<title>&#x9986;&#x5185;&#x65b0;&#x95fb;</title>
+<link rel="stylesheet" type="text/css" href="css/site.20170823221812.css">
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="css/site.20170823221812-lteIE7.css">
+<![endif]-->
+</head>
+<body id="body">
+<div class="vis pos size-2 cont-11">
+<div class="pos vis-2 section">
+<div class="vis pos-3 size-3 cont-3">
+<div class="anim fadeInDown js-35 vis pos-3 size-4 cont-32">
+<a class="button vis-3 pos-4 size-5 font" href="index.html">万忠墓</a>
+</div>
+<div class="anim fadeInDown js-36 vis pos-5 size-6 cont-6">
+<a class="button vis-3 pos-4 size-7 font-2" href="people.html">人物简介</a>
+</div>
+<div class="anim fadeInDown js-37 vis pos-6 size-6 cont-4">
+<a class="button vis-3 pos-4 size-7 font-2" href="history.html">历史事件</a>
+</div>
+<div class="anim fadeInDown js-38 vis pos-7 size-6 cont-31">
+<a class="button vis-3 pos-4 size-7 font-2" href="#">馆内新闻</a>
+</div>
+<div class="anim fadeInDown js-39 vis pos-8 size-6 cont-13">
+<a class="button vis-3 pos-4 size-7 font-2" href="way.html">参观指南</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pos-33 vis-2 section-2">
+<div class="vis pos-10 size-38 cont-9">
+<div class="wrapper-2">
+<div id="main"></div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<style type="text/css"> 
+.left a{
+	font-size:18px; 
+	color: black;
+	text-decoration: none;
+}
+.left p{
+	margin-top: 20px;
+	color: gray;
+}
+.left{
+	width: 500px;
+	height: 150px;
+	border-bottom: 1px solid #f0f0f0;
+	float:left;
+	margin-bottom: 30px;
+}
+img{
+	float:right;
+	width: 140px;
+	height:120px;
+}
+.item{
+	width: 700px;
+	height: auto;
+	margin:0 auto; 
+	overflow:auto;
+}
+
+
+</style>
+<script type="text/javascript">
+	var URL = "http://www.jianshu.com/u/967f5bedca64";
+	var page = 1;
+	var totalPages = 1;
+
+	function addItem(slug,title,time,content,imgSrc,viewsCount){
+		var one = document.createElement("div");
+		one.setAttribute("class","item");
+
+		var left = document.createElement("div");
+		left.setAttribute("class","left");
+			
+		var a = document.createElement("a");
+		var a_text = document.createTextNode(title);
+		a.setAttribute("href","article.html?p="+slug);
+		a.setAttribute("target","_blank");
+		
+		var p = document.createElement("p");
+		var p_text = document.createTextNode(content);
+		p.appendChild(p_text);
+		
+		var img = document.createElement("img");
+		img.setAttribute("src", imgSrc+"");
+		
+		var p_views = document.createElement("p");
+		var p_views_text = document.createTextNode(time.substring(0, 10));
+		p_views.appendChild(p_views_text);
+		
+
+		a.appendChild(a_text);
+		left.appendChild(a);
+		left.appendChild(p);
+		left.appendChild(p_views);
+		one.appendChild(left);
+		one.appendChild(img);
+		document.getElementById("main").appendChild(one);
+	}
+
+	function paraseData(data){
+		var imgAdd = "?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300";
+		$(data).each(function(i){
+			var item = data[i];
+			var img;
+			if(item["cover_img"] == ''){
+				img = item['author']['avatar'];
+			}else{
+				img = item['cover_img'];
+			}
+			addItem(item['slug'],item['title'],item['shared_at'],
+					item['public_abbr'],img+imgAdd,item['views_count']);
+			
+		});
+	}
+	function getList(){
+		$.ajax({
+			headers: {
+				Accept: "application/json"
+			},
+			url:URL+"?order_by=shared_at&page="+page,
+			type: "get",
+			success: function (data) {
+				page = data['page'];
+				totalPages = data['total_pages'];
+				
+				paraseData(data['notes']);
+				
+				if(page < totalPages){
+					page = page+1;
+					getList();
+				}
+			}
+		});
+	}
+	getList();
+</script>
+
+</div>
+</div>
+<div class="vis pos-38 size-13 cont-10"></div>
+<div class="vis pos-14 size-14 cont-3">
+<div class="vis pos-3 size-15 cont-9">
+<p class="para-2"><span class="font-7">&#x7248;&#x6743;&#x6240;&#x6709;&#xff1a; &#x4e07;&#x5fe0;&#x5893;&#x7eaa;&#x5ff5;&#x9986; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="para-2"><span class="font-7">&#x5730;&#x5740;&#xff1a;&nbsp;&nbsp;&#x8fbd;&#x5b81;&#x7701;&#x5927;&#x8fde;&#x5e02;&#x65c5;&#x987a;&#x53e3;&#x533a;&#x4e5d;&#x4e09;&#x8def;23&#x53f7;</span></p>
+<p class="para-2"><span class="font-7">&#x7535;&#x8bdd;&#xff1a;&#xff08;0411&#xff09;86612924</span></p>
+</div>
+<div class="vis pos-10 size-16 cont-9">
+<p class="para-2"><span class="font-7"> web:&nbsp;&nbsp;github</span></p>
+<p class="para-2"><span class="font-7">&#x90ae;&#x653f;&#x7f16;&#x7801;&#xff1a;116041</span></p>
+<p class="para-2"><span class="font-7">&#x5236;&#x4f5c;&amp;&#x7ef4;&#x62a4;&#xff1a; &#x4e1c;&#x5317;&#x5927;&#x5b66;&#x8ba1;&#x7b97;&#x673a;&#x5b66;&#x9662;</span></p>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/woolite.js"></script>
+<script type="text/javascript" src="js/news.20170823221812.js"></script>
+<script type="text/javascript">
+var ver=RegExp(/Mozilla\/5\.0 \(Linux; .; Android ([\d.]+)/).exec(navigator.userAgent);if(ver&&parseFloat(ver[1])<5){document.getElementsByTagName('body')[0].className+=' whitespacefix';}
+</script>
+</body>
+</html>
