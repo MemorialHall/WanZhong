@@ -6,7 +6,7 @@ sys.setdefaultencoding('utf8')
 import requests
 import json
 
-URL = 'http://www.jianshu.com/u/967f5bedca64'
+URL = 'http://www.jianshu.com/u/fa8de22b462e'
 query = '?order_by=shared_at&page='
 page = 1
 
