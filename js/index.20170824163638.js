@@ -18,6 +18,7 @@ wl.addAnimation($('.js-5')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-6')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-7')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-8')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-9')[0], "1.00s", "0.00s", 1, 100);
 wl.start();
 
 });

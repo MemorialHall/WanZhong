@@ -6,10 +6,11 @@ $(document).ready(function() {
 (function(){$('a[href^="#"]').each(function(){$(this).click(function(){var t=this.hash.length>1?$('[name="'+this.hash.slice(1)+'"]').offset().top:0;return $("html, body").animate({scrollTop:t},400),!1})})})();
 var wl = new woolite();
 wl.init();
-wl.addAnimation($('.js-57')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-58')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-59')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-60')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-35')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-36')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-37')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-38')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-39')[0], "1.00s", "0.00s", 1, 100);
 wl.start();
 
 });

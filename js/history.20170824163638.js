@@ -6,10 +6,6 @@ $(document).ready(function() {
 (function(){$('a[href^="#"]').each(function(){$(this).click(function(){var t=this.hash.length>1?$('[name="'+this.hash.slice(1)+'"]').offset().top:0;return $("html, body").animate({scrollTop:t},400),!1})})})();
 var wl = new woolite();
 wl.init();
-wl.addAnimation($('.js-36')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-37')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-38')[0], "1.00s", "0.00s", 1, 100);
-wl.addAnimation($('.js-39')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-40')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-41')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-42')[0], "1.00s", "0.00s", 1, 100);
@@ -27,6 +23,11 @@ wl.addAnimation($('.js-53')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-54')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-55')[0], "1.00s", "0.00s", 1, 100);
 wl.addAnimation($('.js-56')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-57')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-58')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-59')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-60')[0], "1.00s", "0.00s", 1, 100);
+wl.addAnimation($('.js-61')[0], "1.00s", "0.00s", 1, 100);
 wl.start();
 
 });
